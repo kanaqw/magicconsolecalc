@@ -26,7 +26,7 @@ int main() {
 	int x, y;
 	while (op != 'e')
 	{
-		cout <<"What op would u like: add(+), sub(-), div(/), mul(*), [e]xit? ";
+		printf("What op would u like: add(+), sub(-), div(/), mul(*), [e]xit? ");
 		cin >> op;
 		switch (op) {
 		case'+':
@@ -34,28 +34,28 @@ int main() {
 			cin >> x;
 			cout << "Second var: ";
 			cin >> y;
-			cout << x << " + " << y << " = " << add(x, y) << "\n";
+			printf("x + y = %d\n", add(x, y));
 			break;
 		case'-':
 			cout << "First var: ";
 			cin >> x;
 			cout << "Second var: ";
 			cin >> y;
-			cout << x << " - " << y << " = " << subtract(x, y) << "\n";
+			printf("x - y = %d\n", subtract(x,y));
 			break;
 		case'/':
 			cout << "First var: ";
 			cin >> x;
 			cout << "Second var: ";
 			cin >> y;
-			cout << x << " / " << y << " = " << divide(x, y) << "\n";
+			printf("x / y = %d\n", divide(x, y));
 			break;
 		case '*':
 			cout << "First var: ";
 			cin >> x;
 			cout << "Second var: ";
 			cin >> y;
-			cout << x << " * " << y << " = " << multiply(x, y) << "\n";
+			printf("x * y = %d\n", multiply(x, y));
 			break;
 		case 'e':
 			return 0;
