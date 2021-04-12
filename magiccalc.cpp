@@ -10,13 +10,11 @@ enum class Operation :char {
 };
 
 struct Calculator {
-	
 		Calculator() {
 		Operation add = Operation::Add;
 		char op = 'c';
 		op: add;
 	}
-
 		int calculate(int a, int b, char op) {
 		int sum = a + b;
 		int div = a / b;
