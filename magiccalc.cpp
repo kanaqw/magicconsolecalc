@@ -1,68 +1,65 @@
+#include <cstdio>
 #include <iostream>
+#include <string>
 
-int multiply(int x, int y)
-{
-	return x * y;
+enum class Operation :char {
+	Add = '+',
+	Subtract = '-',
+	Multiply = '*',
+	Divide = '/'
+};
 
-}
-
-int divide(int x, int y)
-{
-	return x / y;
-}
-int add(int x, int y)
-{
-	return x + y;
-}
-int subtract(int x, int y)
-{
-	return x - y;
-}
-
-using namespace std;
-
-int main() {
-	char op = 'c';
-	int x, y;
-	while (op != 'e')
-	{
-		printf("What op would u like: add(+), sub(-), div(/), mul(*), [e]xit? ");
-		cin >> op;
-		switch (op) {
-		case'+':
-			cout << "First var: ";
-			cin >> x;
-			cout << "Second var: ";
-			cin >> y;
-			printf("x + y = %d\n", add(x, y));
-			break;
-		case'-':
-			cout << "First var: ";
-			cin >> x;
-			cout << "Second var: ";
-			cin >> y;
-			printf("x - y = %d\n", subtract(x,y));
-			break;
-		case'/':
-			cout << "First var: ";
-			cin >> x;
-			cout << "Second var: ";
-			cin >> y;
-			printf("x / y = %d\n", divide(x, y));
-			break;
-		case '*':
-			cout << "First var: ";
-			cin >> x;
-			cout << "Second var: ";
-			cin >> y;
-			printf("x * y = %d\n", multiply(x, y));
-			break;
-		case 'e':
-			return 0;
-		default:
-			cout << "Sorry, try again" << "\n";
-		}
-		
+struct Calculator {
+	
+		Calculator() {
+		Operation add = Operation::Add;
+		char op = 'c';
+		op: add;
 	}
-	return 0;
-}
+
+		int calculate(int a, int b, char op) {
+		int sum = a + b;
+		int div = a / b;
+		int mul = a * b;
+		int sub = a - b;
+		switch (op) {
+		case ('+'):
+			printf("x + y = %d\n", sum);
+			return sum;
+			break;
+		case ('/'):
+			printf("x / y = %d\n", div);
+			return div;
+			break;
+		case ('*'):
+			printf("x * y = %d\n", mul);
+			return mul;
+			break;
+		case ('-'):
+			printf("x - y = %d\n", div);
+			return sub;
+			break;
+		case ('e'):
+			return 0;
+			break;
+		default:
+			printf("Sorry luv, didnt get it\n");
+		}
+	};
+};
+	int main() {
+		int first_var;
+		int second_var;
+		char oper;
+		printf("your op: +, - , /, * or [e] to exit: \n");
+		std::cin >> oper;
+		if (oper != 'e') {
+			printf("First var: \n");
+			std::cin >> first_var;
+			printf("Second var: \n");
+			std::cin >> second_var;
+			Calculator calc;
+			calc.calculate(first_var, second_var, oper);
+		}
+		return 0;
+	};
