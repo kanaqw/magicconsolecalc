@@ -44,7 +44,7 @@ struct Calculator {
 			break;
 		case ('-'):
 
-			printf("x - y = %d\n", div);
+			printf("x - y = %d\n", sub);
 			return sub;
 			break;
 		default:
