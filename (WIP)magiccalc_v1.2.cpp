@@ -53,13 +53,8 @@ int main() {
 	char oper='c';
 	Calculator calc;
 	Calculator*calcptr = &calc;
-	calcptr->get_firstVar(first_var);
-	calcptr->get_secondVar(second_var);
-	calcptr->get_oper(oper);
-	printf("%d\n", first_var);
-	printf("%d\n", second_var);
-	printf("%c\n", oper);
-
-	calcptr->calcres(first_var, second_var, oper);
+	calcptr->calcres(calcptr->get_firstVar(first_var),
+			 calcptr->get_secondVar(second_var),
+			 calcptr->get_oper(oper));
 	return 0;
 };
