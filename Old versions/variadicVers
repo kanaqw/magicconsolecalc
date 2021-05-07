@@ -1,0 +1,23 @@
+#include <cstdio>
+#include <iostream>
+
+template <typename T>
+constexpr T sum(T x) {
+	return x;
+}
+
+template <typename T, typename... Args>
+constexpr T sum(T x, Args...args) {
+	return x + sum(args...);
+}
+
+int main() {
+	int temp = 0;
+	int arr[10] = {};
+	for (size_t z = 0; z < 5; z++) {
+		std::cin >> arr[z];
+		temp += arr[z];
+	}
+	
+	printf("The answer is %d", sum(temp));
+}
