@@ -1,1 +1,1 @@
-Copy anything anywhere u want, dont care
+Protected by copyright law. All rights reserved
